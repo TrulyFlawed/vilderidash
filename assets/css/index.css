@@ -1,0 +1,29 @@
+@layer reset, base, theme, layout, components, utilities, overrides;
+
+@import "/assets/css/reset.css" layer(reset);
+@import "/assets/css/base.css" layer(base);
+/* @import "/assets/css/theme.css" layer(theme); */
+@import "/assets/css/components.css" layer(components);
+
+:root {
+	--site-width: min(58ch, 100%);
+
+    --color-text-primary:     oklch(0.98 0 0);
+    --color-text-secondary:   oklch(0.05 0 0);
+    --color-bg-primary:       oklch(0.04 0 0);
+    --color-bg-secondary:     oklch(0.22 0 0);
+
+    /* --color-link:			  oklch(0.7262 0.1661 17.21); */
+    --color-link: oklch(73.201% 0.20506 145.22);
+	/* --color-link-hover:       oklch(0.8043 0.1135 12.42); */
+    --color-link-hover: oklch(88.285% 0.21718 146.502);
+
+	/* --blockquote-border-color: oklch(0.6596 0.2152 23.69); */
+    --blockquote-border-color: oklch(71.376% 0.18429 137.745);
+
+    --color-surface:          oklch(0.22 0 0);
+    --color-surface-hover:    oklch(0.30 0 0);
+
+    --color-text-muted:       oklch(0.85 0 0);
+    --color-text-very-muted:  oklch(0.5 0 0);
+}

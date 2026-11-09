@@ -1,0 +1,128 @@
+html {
+	scrollbar-gutter: stable;
+}
+
+body {
+	display: grid;
+	grid-template-rows: auto 1fr auto; /* Let body take up as much room as possible, creating a sticky footer. */
+	block-size: 100dvh;
+
+	font-family: "Inter", system-ui, Roboto, sans-serif;
+	font-feature-settings: "cv08", "cv05", "cv10";
+	line-height: 1.5;
+
+	font-size: 1rem;
+	color: var(--color-text-primary);
+	background-color: var(--color-bg-primary);
+
+	transition: ease 0.15s;
+}
+
+main {
+	inline-size: var(--site-width);
+	margin: 0 auto;
+	padding-block: 2.5rem 0;
+	padding-inline: 1.5rem;
+
+	&:focus-visible {
+		outline: 2px solid var(--color-link);
+		/* Fix issue where border was on top of the outline, preventing the
+		bottom part from ever showing up. */
+		z-index: 9999;
+	}
+}
+
+h1 {
+	margin-block-end: 1rem;
+	/* text-wrap: balance; */
+	line-height: 1.2;
+}
+
+h2 {
+	margin-block-start: 1rem;
+	margin-block-end: 0.5rem;
+	/* text-wrap: balance; */
+	line-height: 1.2;
+}
+
+h3 {
+	margin-block-start: 1rem;
+	margin-block-end: 0.5rem;
+	line-height: 1.2;
+}
+
+ul, ol {
+	margin: 1.25rem 0;
+	padding-inline-start: 1.25rem;
+}
+li::marker {
+	color: var(--color-text-very-muted);
+	transition: color 0.15s ease;
+}
+
+p {
+	margin-block-end: 1.25rem;
+	text-wrap: pretty;
+	transition: color 0.15s ease;
+}
+
+hr {
+	color: var(--color-surface-hover);
+	background-color: var(--color-surface-hover);
+	box-sizing: border-box;
+	margin: 1rem 0;
+	padding: 0;
+	transition: ease 0.15s;
+}
+
+a {
+	color: var(--color-link);
+
+	text-decoration: 0.0625em underline;
+	text-underline-offset: 0.2em;
+
+	outline: 0px solid transparent;
+	transition: ease 0.15s;
+
+	border-radius: 0.25rem;
+
+	&:hover,
+	&:focus-visible {
+		color: var(--color-link-hover);
+		text-decoration-thickness: 0.125em;
+	}
+}
+
+small {
+    color: var(--color-text-muted);
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	border-radius: 0.5rem;
+
+	/* Alt text fallback stuff. sadly couldn't get a nicer padding without ruining normal images. */
+	background-color: var(--color-surface);
+}
+
+/* Stack the figure's content (images, then caption) vertically. */
+figure {
+	display: flex;
+	flex-direction: column;
+	margin-block-end: 1rem;
+}
+
+:target {
+	scroll-margin-top: 4rem;
+}
+
+::selection {
+	background-color: var(--blockquote-border-color);
+	color: var(--color-text-secondary);
+
+	@media (prefers-color-scheme: light) {
+		color: var(--color-text-secondary);
+	}
+}
